@@ -1,0 +1,13 @@
+class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        a = 0
+        b = 0
+        for char in num1:
+            a*=10
+            a+= (ord(char) - ord('0'))
+        for char in num2:
+            b*=10
+            b+= (ord(char) - ord('0'))
+        return str(a * b)
+        
+        

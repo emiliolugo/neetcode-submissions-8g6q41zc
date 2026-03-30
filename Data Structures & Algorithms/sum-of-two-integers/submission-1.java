@@ -1,0 +1,18 @@
+class Solution {
+    public int getSum(int a, int b) {
+        int carry = 0, res =0, mask = 0xFFFFFFFF;
+
+        for(int i = 0; i < 32; i++){
+            int a_bit = (a >> i) & 1;
+            int b_bit = (b>>i) & 1;
+            int sum_bits = a_bit ^ b_bit ^ carry;
+            carry = (a_bit & b_bit) | (carry & (a_bit ^ b_bit));
+            if(sum_bits != 0){
+                res |= ( 1<< i);
+            }
+
+        }
+
+        return res;
+    }
+}
